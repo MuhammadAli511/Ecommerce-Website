@@ -1,7 +1,11 @@
 import Categories from './Categories';
 import Navbar from './Navbar';
+import ProductCard from './ProductCard';
+import Products from './Products';
 export {
     Navbar,
-    Categories
+    Categories,
+    ProductCard,
+    Products
 };
 
