@@ -43,7 +43,7 @@ const Cart = () => {
                     Your cart is empty
                   </h2>
                   <p className="text-sm text-gray-600">
-                    Looks like you haven't added any items to your cart yet.
+                    You have no items in your shopping cart.
                   </p>
                 </div>
               ) : (
