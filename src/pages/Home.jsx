@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Categories, Navbar } from "../components";
-// import productcard
 import ProductCard from "../components/ProductCard";
 
 const Home = () => {

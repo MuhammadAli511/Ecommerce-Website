@@ -38,7 +38,7 @@ const MensProducts = () => {
 
     return (
         <div>
-            <Navbar onChange={onChange} />
+            <Navbar cartItemsCount={cart.length} />
             <Categories />
             <div className="container mx-auto my-4">
                 <h2 className="text-2xl font-bold mb-4 mt-20 flex items-center justify-center">Products</h2>

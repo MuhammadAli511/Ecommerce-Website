@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Cart, ElectronicProducts, Home, JeweleryProducts, MensProducts, ProductDetail, WomensProducts } from "./pages";
+import { Cart, ElectronicProducts, Home, JeweleryProducts, MensProducts, NotImplemented, ProductDetail, WomensProducts } from "./pages";
 function App() {
   
   return (
@@ -12,6 +12,7 @@ function App() {
         <Route path="/electronics" element={<ElectronicProducts />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/details/:id" element={<ProductDetail/>} />
+        <Route path="*" element={<NotImplemented />} />
       </Routes>
     </Router>
   )
