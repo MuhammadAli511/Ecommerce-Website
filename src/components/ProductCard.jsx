@@ -1,28 +1,32 @@
 import React, { useState } from "react";
+import { useDispatch } from 'react-redux';
+import { Link } from "react-router-dom";
+import { addToCart } from '../redux/actions';
 
 const ProductCard = ({ product }) => {
-    const [units, setUnits] = useState(0);
+    const dispatch = useDispatch();
+    const [units, setUnits] = useState(1);
     const [cartItems, setCartItems] = useState([]);
 
     const handleUnitsChange = (event) => {
-        setUnits(event.target.value);
+        setUnits(parseInt(event.target.value));
     };
 
     const handleAddToCart = () => {
-        if (units > 0) {
-            setCartItems([...cartItems, { product, units }]);
-            setUnits(0);
+        if (parseInt(units)>0 && parseInt(units)<=product.id) {
+            dispatch(addToCart(product, units));
         }
     };
 
-    const handleCardClick = () => {
-        // Navigate to the detail page of the product
-    }
-
     return (
-        <div className="bg-white shadow-md rounded-lg p-4" onClick={handleCardClick}>
+        <div className="bg-white shadow-md rounded-lg p-4">
             <img src={product.image} alt={product.name} className="w-full h-48 object-contain" />
-            <h2 className="text-lg font-medium my-2">{product.name}</h2>
+            <Link 
+                to={`/details/${product.id}`}
+                className="link"    
+            >
+            <h2 className="text-base font-medium my-2">{product.title}</h2>
+            </Link>
             <div className="flex justify-between items-center">
                 <span className="font-bold text-gray-700">${product.price}</span>
                 <div className="flex items-center">
@@ -37,7 +41,7 @@ const ProductCard = ({ product }) => {
                 </div>
             </div>
             <div className="flex items-center justify-center">
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg " onClick={handleAddToCart}>
+                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg" onClick={handleAddToCart}>
                     Add to Cart
                 </button>
             </div>

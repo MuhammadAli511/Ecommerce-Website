@@ -1,16 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Categories, Navbar } from "../components";
-// import productcard
 import ProductCard from "../components/ProductCard";
 
-const Home = () => {
+const JeweleryProducts = () => {
 
     const [products, setProducts] = useState([]);
     const [filtered, setFiltered] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+    const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+        fetch("https://fakestoreapi.com/products/category/jewelery")
             .then((response) => response.json())
             .then((data) => setProducts(data));
     }, []);
@@ -53,4 +52,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default JeweleryProducts

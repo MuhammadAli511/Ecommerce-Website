@@ -14,6 +14,9 @@ const Categories = () => {
         <Link to="/jewelery" className="px-4 py-2 text-gray-600 hover:text-gray-800">
           Jewelery
         </Link>
+        <Link to="/electronics" className="px-4 py-2 text-gray-600 hover:text-gray-800">
+          Electronics
+        </Link>
       </nav>
     </div>
   );
